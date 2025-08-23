@@ -1,4 +1,4 @@
-name: Run Hello World
+name: Run Bash Jobs
 on:
   workflow_dispatch:
   # push:
@@ -10,8 +10,17 @@ jobs:
       steps:
         - name: Checkout My code
           uses: actions/checkout@v4
-        
         - name: list repo files
           run: |
             ls
             echo "My name is peter"
+    run-Demo-script:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout My code
+          uses: actions/checkout@v4
+        - name: Make directory
+          run: |
+            mkdir -p acada_github/workflow
+            touch acada_github/workflow/acada{1..10}
+            ls -al acada_github/workflow
