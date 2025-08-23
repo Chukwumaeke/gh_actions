@@ -1,0 +1,17 @@
+name: Run Hello World
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+jobs:
+    run-bash-script:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout My code
+          uses: actions/checkout@v4
+        
+        - name: list repo files
+          run: |
+            ls
+            echo "My name is peter"
