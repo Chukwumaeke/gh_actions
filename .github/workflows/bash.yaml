@@ -30,5 +30,5 @@ jobs:
              hostname -I
         - name: check secrets
           run: |
-            echo "{{ secrets.REMOTE_HOST}}"
-            echo "{{ secrets.SSH_PRIVATE_KEY}}"
+            echo ${{ secrets.REMOTE_HOST}}
+            echo ${{ secrets.SSH_PRIVATE_KEY}}
