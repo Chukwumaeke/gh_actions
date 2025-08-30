@@ -6,7 +6,7 @@ on:
   #     - main
 jobs:
     run-bash-script:
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - name: Checkout My code
           uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
             ls
             echo "My name is peter"
     run-Demo-script:
-      runs-on: ubuntu-latest
+      runs-on: self-hosted
       steps:
         - name: Checkout My code
           uses: actions/checkout@v4
@@ -24,3 +24,6 @@ jobs:
             mkdir -p acada_github/workflow
             touch acada_github/workflow/acada{1..10}
             ls -al acada_github/workflow
+   
+        - name: check runner hostname
+          run: hostname -f ; hostname -I 
