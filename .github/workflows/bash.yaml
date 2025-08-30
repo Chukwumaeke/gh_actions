@@ -27,4 +27,8 @@ jobs:
         - name: check runner hostname
           run: | 
              hostname -f
-             hostname -I 
+             hostname -I
+       - name: check secrets
+         run: |
+            echo "{{ secrets.REMOTE_HOST}}"
+            echo "{{ secrets.SSH_PRIVATE_KEY}}"
