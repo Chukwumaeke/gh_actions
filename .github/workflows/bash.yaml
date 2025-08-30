@@ -6,7 +6,7 @@ on:
   #     - main
 jobs:
     run-bash-script:
-      runs-on: self-hosted
+      runs-on: ubuntu-latest
       steps:
         - name: Checkout My code
           uses: actions/checkout@v4
@@ -15,7 +15,7 @@ jobs:
             ls
             echo "My name is peter"
     run-Demo-script:
-      runs-on: self-hosted
+      runs-on: ubuntu-latest
       steps:
         - name: Checkout My code
           uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
           run: | 
              hostname -f
              hostname -I
-       - name: check secrets
-         run: |
+        - name: check secrets
+          run: |
             echo "{{ secrets.REMOTE_HOST}}"
             echo "{{ secrets.SSH_PRIVATE_KEY}}"
