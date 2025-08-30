@@ -28,11 +28,6 @@ jobs:
           run: | 
              hostname -f
              hostname -I
-        - name: check secrets
-          run: |
-            echo ${{ secrets.REMOTE_HOST}}
-            echo ${{ secrets.SSH_PRIVATE_KEY}}
-
         - name: ssh 
           uses: appleboy/ssh-action@master
           with:
