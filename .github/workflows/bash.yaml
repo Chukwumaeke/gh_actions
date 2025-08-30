@@ -45,6 +45,6 @@ jobs:
            key: ${{ secrets.SSH_PRIVATE_KEY }}
            script: |
              ls ~/deploy
-             cd ~/deploy/gh_actions/animal-search/
+             cd ~/deploy/animal-search/
              docker-compose up -d 
              docker ps
