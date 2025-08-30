@@ -24,6 +24,7 @@ jobs:
             mkdir -p acada_github/workflow
             touch acada_github/workflow/acada{1..10}
             ls -al acada_github/workflow
-   
         - name: check runner hostname
-          run: hostname -f ; hostname -I 
+          run: | 
+   	     hostname -f
+             hostname -I 
