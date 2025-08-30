@@ -1,0 +1,22 @@
+name: Website Deploy
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+jobs:
+    run-Deploy-script:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v4
+
+        - name: Deploy Website on EC2
+          uses: appleboy/ssh-action@master
+          with:
+           host: ${{ secrets.REMOTE_HOST }}
+           username: ${{ secrets.REMOTE_USER }}
+           key: ${{ secrets.SSH_PRIVATE_KEY }}
+           script: |
+             docker run -d -p 8090:80 --name demo-website kniru/techmax-website
+             docker ps
