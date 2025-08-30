@@ -1,9 +1,9 @@
 name: Website Deploy
 on:
-  workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
+ # workflow_dispatch:
+   push:
+     branches:
+       - main
 jobs:
     run-Deploy-script:
       runs-on: ubuntu-latest
@@ -18,5 +18,6 @@ jobs:
            username: ${{ secrets.REMOTE_USER }}
            key: ${{ secrets.SSH_PRIVATE_KEY }}
            script: |
+             docker rm -f demo-website > /dev/null
              docker run -d -p 8090:80 --name demo-website kniru/techmax-website
              docker ps
