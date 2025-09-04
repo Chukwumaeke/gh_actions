@@ -1,4 +1,4 @@
-name: Animal Search Deploy
+name: Animal Search Deplooy
 on:
   workflow_dispatch:
   # push:
