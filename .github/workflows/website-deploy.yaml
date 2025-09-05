@@ -1,9 +1,6 @@
 name: Francis Website Deploy
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - main
 jobs:
     run-Deploy-script:
       runs-on: ubuntu latest
